@@ -1,10 +1,28 @@
 import Card from "./Card";
 import contacts from "../contacts";
+import Heading from "./Heading";
+ import Avatar from "./Avatar";
+
+ function createCard(contact) {
+    return <Card 
+            key={contact.id}
+            name={contact.name}
+            imgsrc={contact.imgURL}
+            tel={contact.phone}
+            email={contact.email}
+            uid={contact.id}
+    />;
+ }
 
 function App() {
     return <div>
-        <heading className="heading">React Props</heading>
-        <Card 
+        <Heading className="heading" />
+        <Avatar imgsrc={"https://picsum.photos/300"} />
+
+        {contacts.map(createCard)}
+
+
+        {/* <Card 
             name={contacts[0].name}
             imgsrc={contacts[0].imgURL}
             tel={contacts[0].phone}
@@ -21,7 +39,7 @@ function App() {
             imgsrc={contacts[2].imgURL}
             tel={contacts[2].phone}
             email={contacts[2].email}
-        />
+        /> */}
     </div>;
 }
 

@@ -1,9 +1,13 @@
-import React from "react";
+import React, { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import App from "./components/App";
 
 var root = createRoot(document.getElementById("root"));
-root.render(<App/>);
+root.render(
+    <StrictMode>
+        <App/>
+    </StrictMode>
+);
 
 // Complete react inline Styling and conditional styling
 // import React from "react";
