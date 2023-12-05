@@ -1,47 +1,58 @@
-import Card from "./Card";
-import contacts from "../contacts";
-import Heading from "./Heading";
- import Avatar from "./Avatar";
-
- function createCard(contact) {
-    return <Card 
-            key={contact.id}
-            name={contact.name}
-            imgsrc={contact.imgURL}
-            tel={contact.phone}
-            email={contact.email}
-            uid={contact.id}
-    />;
- }
+import React from "react";
 
 function App() {
-    return <div>
-        <Heading className="heading" />
-        <Avatar imgsrc={"https://picsum.photos/300"} />
-
-        {contacts.map(createCard)}
-
-
-        {/* <Card 
-            name={contacts[0].name}
-            imgsrc={contacts[0].imgURL}
-            tel={contacts[0].phone}
-            email={contacts[0].email}
-        />
-        <Card 
-            name={contacts[1].name}
-            imgsrc={contacts[1].imgURL}
-            tel={contacts[1].phone}
-            email={contacts[1].email}
-        />
-        <Card 
-            name={contacts[2].name}
-            imgsrc={contacts[2].imgURL}
-            tel={contacts[2].phone}
-            email={contacts[2].email}
-        /> */}
-    </div>;
+  return (
+    <div className="container">
+      <h1>0</h1>
+      <button>+</button>
+    </div>
+  );
 }
+
+// import Card from "./Card";
+// import contacts from "../contacts";
+// import Heading from "./Heading";
+// import Avatar from "./Avatar";
+
+//  function createCard(contact) {
+//     return <Card 
+//             key={contact.id}
+//             name={contact.name}
+//             imgsrc={contact.imgURL}
+//             tel={contact.phone}
+//             email={contact.email}
+//             uid={contact.id}
+//     />;
+//  }
+
+// function App() {
+//     return <div>
+//         <Heading className="heading" />
+//         <Avatar imgsrc={"https://picsum.photos/300"} />
+
+//         {contacts.map(createCard)}
+
+
+//         {/* <Card 
+//             name={contacts[0].name}
+//             imgsrc={contacts[0].imgURL}
+//             tel={contacts[0].phone}
+//             email={contacts[0].email}
+//         />
+//         <Card 
+//             name={contacts[1].name}
+//             imgsrc={contacts[1].imgURL}
+//             tel={contacts[1].phone}
+//             email={contacts[1].email}
+//         />
+//         <Card 
+//             name={contacts[2].name}
+//             imgsrc={contacts[2].imgURL}
+//             tel={contacts[2].phone}
+//             email={contacts[2].email}
+//         /> */}
+//     </div>;
+// }
 
 export default App;
 
