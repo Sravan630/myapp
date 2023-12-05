@@ -1,25 +1,41 @@
 import React from "react";
 
 function App() {
-
-    const [count, setCount] = React.useState(0);
-
-    function increase() {
-        setCount(count + 1);
+    
+    const [time , setTime] = React.useState(new Date().toLocaleTimeString('en-IT', { hour12: false }));
+    function updateTime() { 
+        setTime(new Date().toLocaleTimeString('en-IT', { hour12: false }));
     }
 
-    function decrease() {
-        setCount(count - 1);
-    }
+    setInterval(updateTime, 1000);
+    return (
+      <div className="container">
+        <h1>{time}</h1>
+        <button onClick={updateTime}>Get Time</button>
+      </div>
+    );
+  }
 
-  return (
-    <div className="container">
-      <h1>{count}</h1>
-      <button onClick={increase}>+</button>
-      <button onClick={decrease}>- </button>
-    </div>
-  );
-}
+// function App() {
+
+//     const [count, setCount] = React.useState(0);
+
+//     function increase() {
+//         setCount(count + 1);
+//     }
+
+//     function decrease() {
+//         setCount(count - 1);
+//     }
+
+//   return (
+//     <div className="container">
+//       <h1>{count}</h1>
+//       <button onClick={increase}>+</button>
+//       <button onClick={decrease}>- </button>
+//     </div>
+//   );
+// }
 
 // import Card from "./Card";
 // import contacts from "../contacts";
