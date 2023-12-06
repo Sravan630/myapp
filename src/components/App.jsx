@@ -1,20 +1,50 @@
 import React from "react";
 
 function App() {
-    
-    const [time , setTime] = React.useState(new Date().toLocaleTimeString('en-IT', { hour12: false }));
-    function updateTime() { 
-        setTime(new Date().toLocaleTimeString('en-IT', { hour12: false }));
+
+    const [headingText , setHeadingText] = React.useState("Hello");
+    const [isMouseOver , setButtonColor] = React.useState(false);
+
+    function handleMouseOver() {      
+        setButtonColor(true);
     }
 
-    setInterval(updateTime, 1000);
+    function handleMouseLeave() {
+        setButtonColor(false);
+    }
+
+    function handleClick() {
+        setHeadingText("Submitted");
+    }
+
     return (
       <div className="container">
-        <h1>{time}</h1>
-        <button onClick={updateTime}>Get Time</button>
+        <h1>{headingText}</h1>
+        <input type="text" placeholder="What's your name?" />
+        <button 
+            onClick={handleClick} 
+            onMouseOver={handleMouseOver} 
+            onMouseLeave={handleMouseLeave} 
+            style={{backgroundColor:isMouseOver ? "black" : "white"}}>Submit</button>
       </div>
     );
-  }
+}
+
+// function App() {
+    
+//     const [time , setTime] = React.useState(new Date().toLocaleTimeString('en-IT', { hour12: false }));
+//     function updateTime() { 
+//         setTime(new Date().toLocaleTimeString('en-IT', { hour12: false }));
+//     }
+
+//     setInterval(updateTime, 1000);
+//     return (
+//       <div className="container">
+//         <h1>{time}</h1>
+//         <button onClick={updateTime}>Get Time</button>
+//       </div>
+//     );
+// }
 
 // function App() {
 
