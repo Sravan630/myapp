@@ -10,8 +10,11 @@ function App() {
         setName(event.target.value);
     }
 
-    function handleClick() {
+    function handleClick(event) {
         setHeadingText("Hello " + name);
+
+        event.preventDefault();
+        // prevents the default behavoiur of form i.e. page refresh 
     }
 
     function handleMouseOver() {      
@@ -25,12 +28,13 @@ function App() {
     return (
       <div className="container">
         <h1>{headingText}</h1>
-        <input onChange={handleChange} type="text" placeholder="What's your name?" value={name} />
-        <button 
-            onClick={handleClick} 
-            onMouseOver={handleMouseOver} 
-            onMouseLeave={handleMouseLeave} 
-            style={{backgroundColor:isMouseOver ? "black" : "white"}}>Submit</button>
+        <form onSubmit={handleClick}>
+            <input onChange={handleChange} type="text" placeholder="What's your name?" value={name} />
+            <button 
+                onMouseOver={handleMouseOver} 
+                onMouseLeave={handleMouseLeave} 
+                style={{backgroundColor:isMouseOver ? "black" : "white"}}>Submit</button>
+        </form>
       </div>
     );
 }
