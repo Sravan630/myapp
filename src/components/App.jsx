@@ -4,6 +4,15 @@ function App() {
 
     const [headingText , setHeadingText] = React.useState("Hello");
     const [isMouseOver , setButtonColor] = React.useState(false);
+    const [name , setName] = React.useState("");
+
+    function handleChange(event) {
+        setName(event.target.value);
+    }
+
+    function handleClick() {
+        setHeadingText("Hello " + name);
+    }
 
     function handleMouseOver() {      
         setButtonColor(true);
@@ -13,14 +22,10 @@ function App() {
         setButtonColor(false);
     }
 
-    function handleClick() {
-        setHeadingText("Submitted");
-    }
-
     return (
       <div className="container">
         <h1>{headingText}</h1>
-        <input type="text" placeholder="What's your name?" />
+        <input onChange={handleChange} type="text" placeholder="What's your name?" value={name} />
         <button 
             onClick={handleClick} 
             onMouseOver={handleMouseOver} 
